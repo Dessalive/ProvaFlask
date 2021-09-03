@@ -1,4 +1,6 @@
-#!/usr/bin/env python
+    
+    
+    #!/usr/bin/env python
 
 from flask import Flask
 
@@ -7,10 +9,13 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     bott ="""
-    <form action="/frank" method="get">
-    <button type="bottone"> Next Page </button> 
-    """
+    
+    <a href="/frank">Continue</a>
 
+    """
+   # <form action="/frank" method="get">
+   # <button type="bottone"> Next Page </button> 
+   # 
     return bott #"<p>Hello, World!</p>"
 
 @app.route("/frank")
@@ -18,7 +23,7 @@ def hello_frank():
     a  = """
     <html><header></header><body><h1>Benvenuto</h1><p>Inserisci il tuo nome e cognome.</p>
 
-     <form action="/action_page.php" method="get">
+     <form action="/login" method="get">
   <label for="fname">Nome:</label>
   <input type="text" id="fname" name="fname"><br><br>
   <label for="lname">Cognome:</label>
@@ -31,5 +36,23 @@ def hello_frank():
     """
     return a
 
+@app.route("/login")
+def nome_corrisponde():
+    c = """
+    
+    <html><header></header><body><p>Il tuo nome corrisponde nell'utenza, inserisci la password.</p>
+    </body></html>
 
-    # <button type="bottone" formaction="/action_page2.php"> Next Page </button> 
+    <form action="/action_page.php" method="get">
+  <label for="fname">Password:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <button type="submit">Submit</button>
+  <button type="submit" formaction="/frank formmethod="post">Submit using POST</button>
+    </form> 
+
+    """
+    return c
+
+    # <button type="bottone" formaction="/action_page2.php"> Next Page </button>
+
+    
